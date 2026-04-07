@@ -21,7 +21,7 @@ export default function FeaturedApartment() {
                   <svg className="w-12 h-12 mx-auto text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
-                  <p className="mt-2 text-neutral-500 text-sm">{featuredApartment.location}</p>
+                  <p className="mt-2 text-neutral-500 text-sm">{featuredApartment.name}</p>
                 </div>
               </div>
               <div className="absolute inset-4 border-2 border-primary-100 pointer-events-none"></div>
@@ -31,17 +31,19 @@ export default function FeaturedApartment() {
             <div className="p-8 lg:p-12">
               <div className="flex items-baseline gap-2 mb-4">
                 <span className="font-serif text-3xl font-bold text-primary-700">
-                  ${featuredApartment.monthlyRent}
+                  ${featuredApartment.price}
                 </span>
                 <span className="text-neutral-500">/month</span>
               </div>
 
-              <h3 className="font-serif text-2xl font-bold text-neutral-900 mb-4">
-                {featuredApartment.location}
+              <h3 className="font-serif text-2xl font-bold text-neutral-900 mb-2">
+                {featuredApartment.name}
               </h3>
-
-              <p className="text-neutral-600 mb-6 leading-relaxed">
-                {featuredApartment.description}
+              <p className="text-neutral-500 text-sm mb-4">
+                {featuredApartment.location} - {featuredApartment.address}
+              </p>
+              <p className="text-neutral-600 mb-4 text-sm">
+                {featuredApartment.bedrooms === 0 ? 'Studio' : `${featuredApartment.bedrooms} Bed`} | {featuredApartment.bathrooms} Bath | {featuredApartment.sqft} sqft
               </p>
 
               <ul className="space-y-2 mb-8">

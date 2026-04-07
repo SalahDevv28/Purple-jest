@@ -1,6 +1,6 @@
 'use client';
 
-import { useCart } from '@/lib/cart-context';
+import { useCart, type CartItem } from '@/lib/cart-context';
 
 export default function CartDrawer() {
   const { items, isCartOpen, setIsCartOpen, removeFromCart, updateQuantity, totalPrice } = useCart();
@@ -38,7 +38,7 @@ export default function CartDrawer() {
             <p className="text-neutral-500 text-center py-8">Your cart is empty.</p>
           ) : (
             <ul className="space-y-4">
-              {items.map(item => (
+              {items.map((item: CartItem) => (
                 <li key={item.id} className="flex gap-4 border-b border-neutral-200 pb-4">
                   <div className="w-20 h-20 bg-neutral-100 flex-shrink-0 flex items-center justify-center text-neutral-400 text-xs">
                     Image

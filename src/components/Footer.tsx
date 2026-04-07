@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { company } from '@/lib/data';
 
 export default function Footer() {
   return (
@@ -7,9 +8,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <h3 className="text-white font-serif text-xl font-bold mb-4">Purple Jest</h3>
+            <h3 className="text-white font-serif text-xl font-bold mb-4">{company.name}</h3>
             <p className="text-neutral-400 text-sm leading-relaxed">
-              Brave living. Old-fashioned value. Affordable apartments in amazing locations.
+              {company.tagline}
             </p>
           </div>
 
@@ -44,14 +45,14 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Contact</h4>
             <p className="text-neutral-400 text-sm mb-2">
-              <a href="mailto:hello@purplejest.com" className="hover:text-primary-400 transition-colors">
-                hello@purplejest.com
+              <a href={`mailto:${company.email}`} className="hover:text-primary-400 transition-colors">
+                {company.email}
               </a>
             </p>
             {/* Social Icons (grayscale) */}
             <div className="flex gap-4 mt-4">
               <a
-                href="https://instagram.com"
+                href={company.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-neutral-400 hover:text-primary-400 transition-colors"
@@ -62,7 +63,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://x.com"
+                href={company.social.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-neutral-400 hover:text-primary-400 transition-colors"
@@ -73,7 +74,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://facebook.com"
+                href={company.social.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-neutral-400 hover:text-primary-400 transition-colors"
@@ -88,7 +89,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-neutral-800 mt-8 pt-8 text-center text-sm text-neutral-500">
-          <p>&copy; {new Date().getFullYear()} Purple Jest. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} {company.name}. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -1,4 +1,4 @@
-import { locations, faqs } from "@/lib/data";
+import { locations, faqs, apartments, testimonials } from "@/lib/data";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -8,6 +8,8 @@ export const metadata: Metadata = {
 };
 
 export default function InformationPage() {
+  const availableApartments = apartments.filter(apt => apt.available);
+
   return (
     <>
       {/* Hero Section */}
@@ -22,29 +24,37 @@ export default function InformationPage() {
         </div>
       </section>
 
-      {/* Our Locations */}
-      <section id="locations" className="py-16 bg-white" aria-labelledby="locations-heading">
+      {/* Available Apartments */}
+      <section className="py-16 bg-white" aria-labelledby="apartments-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 id="locations-heading" className="font-serif text-3xl font-bold text-neutral-900 text-center mb-12">
-            Our Locations
+          <h2 id="apartments-heading" className="font-serif text-3xl font-bold text-neutral-900 text-center mb-12">
+            Available Apartments
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {locations.map((location, index) => (
-              <div key={index} className="border border-neutral-200 overflow-hidden hover:border-primary-200 transition-colors">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {availableApartments.map(apt => (
+              <div key={apt.id} className="border border-neutral-200 overflow-hidden hover:border-primary-200 transition-colors">
                 <div className="h-48 bg-neutral-100 flex items-center justify-center relative">
                   <svg className="w-10 h-10 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
                   <div className="absolute inset-4 border border-primary-100 pointer-events-none"></div>
                 </div>
                 <div className="p-6">
-                  <h3 className="font-serif text-xl font-bold text-neutral-900 mb-2">
-                    {location.name}
-                  </h3>
-                  <p className="text-neutral-600 text-sm leading-relaxed">
-                    {location.description}
+                  <h3 className="font-serif text-lg font-bold text-neutral-900 mb-1">{apt.name}</h3>
+                  <p className="text-neutral-500 text-sm mb-2">{apt.location}</p>
+                  <p className="text-primary-700 font-bold text-xl mb-2">${apt.price}/month</p>
+                  <p className="text-neutral-600 text-sm mb-3">
+                    {apt.bedrooms === 0 ? 'Studio' : `${apt.bedrooms} Bed`} | {apt.bathrooms} Bath | {apt.sqft} sqft
                   </p>
+                  <ul className="space-y-1 mb-4">
+                    {apt.features.slice(0, 3).map((feature, i) => (
+                      <li key={i} className="text-neutral-600 text-sm flex items-start gap-2">
+                        <span className="text-primary-600 mt-0.5">&#10003;</span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-xs text-neutral-400">{apt.address}</p>
                 </div>
               </div>
             ))}
@@ -52,20 +62,41 @@ export default function InformationPage() {
         </div>
       </section>
 
+      {/* Our Locations */}
+      <section id="locations" className="py-16 bg-neutral-50" aria-labelledby="locations-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 id="locations-heading" className="font-serif text-3xl font-bold text-neutral-900 text-center mb-12">
+            Our Locations
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {locations.map((location, index) => (
+              <div key={index} className="bg-white border border-neutral-200 p-6 hover:border-primary-200 transition-colors">
+                <h3 className="font-serif text-xl font-bold text-neutral-900 mb-2">
+                  {location.name}
+                </h3>
+                <p className="text-neutral-600 text-sm leading-relaxed">
+                  {location.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* The Purple Jest Promise */}
-      <section className="py-16 bg-neutral-50" aria-labelledby="promise-heading">
+      <section className="py-16 bg-white" aria-labelledby="promise-heading">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 id="promise-heading" className="font-serif text-3xl font-bold text-neutral-900 text-center mb-12">
             The Purple Jest Promise
           </h2>
-          <div className="bg-white border border-neutral-200 p-8">
+          <div className="bg-neutral-50 border border-neutral-200 p-8">
             <ul className="space-y-4">
               {[
-                "Handshake deals – your word means something here.",
-                "Transparent pricing – no hidden fees, no surprises.",
-                "No compromise on quality – classic buildings, modern standards.",
-                "Respect for tenants – we're landlords who care about real living.",
-                "Old-fashioned integrity – we do what we say."
+                "Handshake deals - your word means something here.",
+                "Transparent pricing - no hidden fees, no surprises.",
+                "No compromise on quality - classic buildings, modern standards.",
+                "Respect for tenants - we're landlords who care about real living.",
+                "Old-fashioned integrity - we do what we say."
               ].map((promise, index) => (
                 <li key={index} className="flex items-start gap-3">
                   <svg className="w-6 h-6 text-primary-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
@@ -80,7 +111,7 @@ export default function InformationPage() {
       </section>
 
       {/* How to Rent */}
-      <section className="py-16 bg-white" aria-labelledby="process-heading">
+      <section className="py-16 bg-neutral-50" aria-labelledby="process-heading">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 id="process-heading" className="font-serif text-3xl font-bold text-neutral-900 text-center mb-12">
             How to Rent
@@ -91,13 +122,38 @@ export default function InformationPage() {
               { step: "2", title: "Tour", description: "Schedule a visit. See the space, feel the neighbourhood, make your decision." },
               { step: "3", title: "Sign", description: "Simple lease, honest terms. No fine print, no games. Welcome home." }
             ].map((item, index) => (
-              <div key={index} className="text-center p-6 border border-neutral-200">
+              <div key={index} className="text-center p-6 bg-white border border-neutral-200">
                 <div className="w-12 h-12 bg-primary-600 text-white font-serif text-xl font-bold rounded-full flex items-center justify-center mx-auto mb-4">
                   {item.step}
                 </div>
                 <h3 className="font-serif text-xl font-bold text-neutral-900 mb-2">{item.title}</h3>
                 <p className="text-neutral-600 text-sm">{item.description}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-16 bg-white" aria-labelledby="testimonials-heading">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 id="testimonials-heading" className="font-serif text-3xl font-bold text-neutral-900 text-center mb-12">
+            What Tenants Say
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map(t => (
+              <blockquote key={t.id} className="bg-neutral-50 border border-neutral-200 p-6">
+                <div className="flex gap-1 mb-3">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <svg key={i} className={`w-4 h-4 ${i < t.rating ? 'text-primary-600' : 'text-neutral-300'}`} fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-neutral-700 text-sm italic mb-4">"{t.text}"</p>
+                <p className="text-neutral-900 font-semibold text-sm">{t.name}</p>
+                <p className="text-neutral-500 text-xs">{t.apartment}</p>
+              </blockquote>
             ))}
           </div>
         </div>

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useCart } from '@/lib/cart-context';
+import { company } from '@/lib/data';
 import { useState } from 'react';
 
 export default function Header() {
@@ -15,7 +16,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <span className="text-primary-700 font-serif text-xl md:text-2xl font-bold tracking-tight">
-              Purple Jest
+              {company.name}
             </span>
           </Link>
 

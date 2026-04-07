@@ -1,3 +1,5 @@
+import { company } from '@/lib/data';
+
 export default function SocialCTA() {
   return (
     <section className="py-16 bg-neutral-50" aria-labelledby="social-heading">
@@ -13,7 +15,7 @@ export default function SocialCTA() {
         <div className="flex flex-wrap justify-center gap-4">
           {/* Instagram */}
           <a
-            href="https://instagram.com"
+            href={company.social.instagram}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-secondary flex items-center gap-2"
@@ -27,7 +29,7 @@ export default function SocialCTA() {
 
           {/* X (Twitter) */}
           <a
-            href="https://x.com"
+            href={company.social.twitter}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-secondary flex items-center gap-2"
@@ -41,7 +43,7 @@ export default function SocialCTA() {
 
           {/* Facebook */}
           <a
-            href="https://facebook.com"
+            href={company.social.facebook}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-secondary flex items-center gap-2"
@@ -57,7 +59,7 @@ export default function SocialCTA() {
         {/* Accent green CTA - the one allowed accent element */}
         <div className="mt-8">
           <a
-            href="https://instagram.com"
+            href={company.social.instagram}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-accent-500 text-white font-semibold px-6 py-3 transition-colors duration-200 hover:bg-accent-600 focus:outline-none focus:ring-2 focus:ring-accent-400 focus:ring-offset-2"
