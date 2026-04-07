@@ -29,7 +29,7 @@ export default function Hero() {
           {/* Hero Image */}
           <div className="relative h-64 sm:h-80 lg:h-full min-h-[400px] order-1 lg:order-2">
             <Image
-              src="/images/hero-apartments.svg"
+              src="/images/hero-apartments.jpg"
               alt="Classic apartment buildings skyline"
               fill
               className="object-cover"
