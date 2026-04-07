@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
@@ -26,15 +27,14 @@ export default function Hero() {
           </div>
 
           {/* Hero Image */}
-          <div className="relative h-64 sm:h-80 lg:h-full min-h-[400px] bg-neutral-100 order-1 lg:order-2">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center">
-                <svg className="w-16 h-16 mx-auto text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                </svg>
-                <p className="mt-4 text-neutral-500 text-sm">Classic apartment building exterior</p>
-              </div>
-            </div>
+          <div className="relative h-64 sm:h-80 lg:h-full min-h-[400px] order-1 lg:order-2">
+            <Image
+              src="/images/hero-apartments.svg"
+              alt="Classic apartment buildings skyline"
+              fill
+              className="object-cover"
+              priority
+            />
             {/* Vintage border effect */}
             <div className="absolute inset-4 border-2 border-primary-200 pointer-events-none"></div>
           </div>

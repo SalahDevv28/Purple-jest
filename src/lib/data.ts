@@ -53,7 +53,7 @@ export const apartments: Apartment[] = [
     bathrooms: 1,
     sqft: 680,
     features: ["Exposed brick", "Cast-iron fireplace", "Original hardwood floors", "Shared rooftop"],
-    image: "/images/apt-ironwood.jpg",
+    image: "/images/apt-ironwood.svg",
     available: true
   },
   {
@@ -66,7 +66,7 @@ export const apartments: Apartment[] = [
     bathrooms: 1,
     sqft: 890,
     features: ["Corner unit with 3 exposures", "Stained glass window", "Walk-in closet", "Vintage tile bathroom"],
-    image: "/images/apt-watchman.jpg",
+    image: "/images/apt-watchman.svg",
     available: true
   },
   {
@@ -79,7 +79,7 @@ export const apartments: Apartment[] = [
     bathrooms: 1,
     sqft: 520,
     features: ["Murphy bed", "Original tin ceiling", "Modern kitchen (hidden vintage style)", "Secure bike storage"],
-    image: "/images/apt-steadfast.jpg",
+    image: "/images/apt-steadfast.svg",
     available: false
   },
   {
@@ -92,7 +92,7 @@ export const apartments: Apartment[] = [
     bathrooms: 2,
     sqft: 1350,
     features: ["Private entrance", "Backyard patio", "Original clawfoot tub", "Wood-burning stove"],
-    image: "/images/apt-braveheart.jpg",
+    image: "/images/apt-braveheart.svg",
     available: true
   },
   {
@@ -105,7 +105,7 @@ export const apartments: Apartment[] = [
     bathrooms: 1,
     sqft: 610,
     features: ["10-foot ceilings", "Original stage-door access", "Rooftop garden rights", "Built-in bookshelves"],
-    image: "/images/apt-jestmaker.jpg",
+    image: "/images/apt-jestmaker.svg",
     available: true
   },
   {
@@ -118,7 +118,7 @@ export const apartments: Apartment[] = [
     bathrooms: 2,
     sqft: 1050,
     features: ["Panoramic city view", "Gas fireplace", "In-unit laundry", "Keyed elevator"],
-    image: "/images/apt-sentinel.jpg",
+    image: "/images/apt-sentinel.svg",
     available: false
   }
 ];
@@ -157,7 +157,7 @@ export const products: Product[] = [
     description: "Heavy cotton, classic fit. Embroidered logo: a jester's cap intertwined with a lion. Old-school, tough, comfortable.",
     price: 28,
     category: "Apparel",
-    image: "/images/shirt-brave.jpg",
+    image: "/images/shirt-brave.svg",
     inStock: true
   },
   {
@@ -166,7 +166,7 @@ export const products: Product[] = [
     description: "Gold-toned metal pin shaped like a vintage skeleton key. Adds bravery to any jacket or bag.",
     price: 12,
     category: "Accessories",
-    image: "/images/pin-key.jpg",
+    image: "/images/pin-key.svg",
     inStock: true
   },
   {
@@ -175,7 +175,7 @@ export const products: Product[] = [
     description: 'Screen-printed, 18x24", paper stock with a slight texture. Map of the district from 1923.',
     price: 35,
     category: "Home & Wall Art",
-    image: "/images/poster-oldmill.jpg",
+    image: "/images/poster-oldmill.svg",
     inStock: true
   },
   {
@@ -184,7 +184,7 @@ export const products: Product[] = [
     description: 'Everything you need for move-in: metal tape measure, heavy-duty flashlight, notepad with "Brave Listings" cover, and a lucky brass keychain.',
     price: 45,
     category: "Kit",
-    image: "/images/kit-readybox.jpg",
+    image: "/images/kit-readybox.svg",
     inStock: true
   },
   {
@@ -193,7 +193,7 @@ export const products: Product[] = [
     description: "Six-panel, unstructured, 100% wool. Embroidered crest. Made to last through seasons and adventures.",
     price: 32,
     category: "Apparel",
-    image: "/images/cap-wool.jpg",
+    image: "/images/cap-wool.svg",
     inStock: false
   },
   {
@@ -202,7 +202,7 @@ export const products: Product[] = [
     description: 'Heavy ceramic mug, 14oz. Inside bottom reads: "A deal is a deal." Outside has a vintage handshake illustration.',
     price: 16,
     category: "Kitchen",
-    image: "/images/mug-handshake.jpg",
+    image: "/images/mug-handshake.svg",
     inStock: true
   }
 ];

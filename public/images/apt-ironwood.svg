@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f3e8ff"/>
+      <stop offset="100%" stop-color="#e9d5ff"/>
+    </linearGradient>
+  </defs>
+  <rect fill="url(#bg)" width="600" height="400"/>
+  <!-- Brick texture pattern -->
+  <g fill="#9333ea" opacity="0.3">
+    <rect x="50" y="50" width="40" height="20"/>
+    <rect x="100" y="50" width="40" height="20"/>
+    <rect x="150" y="50" width="40" height="20"/>
+    <rect x="75" y="80" width="40" height="20"/>
+    <rect x="125" y="80" width="40" height="20"/>
+    <rect x="175" y="80" width="40" height="20"/>
+    <rect x="50" y="110" width="40" height="20"/>
+    <rect x="100" y="110" width="40" height="20"/>
+    <rect x="150" y="110" width="40" height="20"/>
+  </g>
+  <!-- Loft interior suggestion -->
+  <rect x="100" y="100" width="400" height="250" fill="#ffffff" opacity="0.5" rx="4"/>
+  <!-- Window -->
+  <rect x="200" y="130" width="200" height="150" fill="#d8b4fe" opacity="0.6" rx="4"/>
+  <line x1="300" y1="130" x2="300" y2="280" stroke="#7e22ce" stroke-width="3" opacity="0.5"/>
+  <line x1="200" y1="205" x2="400" y2="205" stroke="#7e22ce" stroke-width="3" opacity="0.5"/>
+  <!-- Fireplace suggestion -->
+  <rect x="420" y="200" width="60" height="100" fill="#6b21a8" opacity="0.4" rx="4"/>
+  <!-- Text -->
+  <text x="300" y="380" text-anchor="middle" fill="#6b21a8" font-family="serif" font-size="18">The Ironwood Loft</text>
+</svg>

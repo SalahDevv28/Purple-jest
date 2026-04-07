@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect fill="#e9d5ff" width="400" height="400"/>
+  <!-- Poster -->
+  <rect x="100" y="60" width="200" height="280" fill="#ffffff" opacity="0.8" rx="2"/>
+  <!-- Map lines -->
+  <line x1="120" y1="100" x2="280" y2="100" stroke="#d8b4fe" stroke-width="2"/>
+  <line x1="120" y1="140" x2="280" y2="140" stroke="#d8b4fe" stroke-width="2"/>
+  <line x1="120" y1="180" x2="280" y2="180" stroke="#d8b4fe" stroke-width="2"/>
+  <line x1="120" y1="220" x2="280" y2="220" stroke="#d8b4fe" stroke-width="2"/>
+  <line x1="160" y1="80" x2="160" y2="300" stroke="#d8b4fe" stroke-width="2"/>
+  <line x1="200" y1="80" x2="200" y2="300" stroke="#d8b4fe" stroke-width="2"/>
+  <line x1="240" y1="80" x2="240" y2="300" stroke="#d8b4fe" stroke-width="2"/>
+  <!-- Title -->
+  <text x="200" y="320" text-anchor="middle" fill="#7e22ce" font-family="serif" font-size="12">Old Mill District 1923</text>
+  <!-- Text -->
+  <text x="200" y="370" text-anchor="middle" fill="#6b21a8" font-family="serif" font-size="16">Neighbourhood Poster</text>
+</svg>

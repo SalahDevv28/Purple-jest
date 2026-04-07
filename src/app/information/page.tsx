@@ -1,4 +1,5 @@
 import { locations, faqs, apartments, testimonials } from "@/lib/data";
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -33,10 +34,13 @@ export default function InformationPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {availableApartments.map(apt => (
               <div key={apt.id} className="border border-neutral-200 overflow-hidden hover:border-primary-200 transition-colors">
-                <div className="h-48 bg-neutral-100 flex items-center justify-center relative">
-                  <svg className="w-10 h-10 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
+                <div className="relative h-48 bg-neutral-100">
+                  <Image
+                    src={apt.image}
+                    alt={apt.name}
+                    fill
+                    className="object-cover"
+                  />
                   <div className="absolute inset-4 border border-primary-100 pointer-events-none"></div>
                 </div>
                 <div className="p-6">
